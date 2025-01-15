@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}Music - DirectMusicPlatform{% endblock %}
+
+{% block content %}
+    <h2>Entdecke Musik</h2>
+    <p>Höre dir die neuesten Tracks und Alben an, die auf unserer Plattform verfügbar sind.</p>
+
+    <!-- Platzhalter für Musikinhalte -->
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card">
+                <img src="{% static 'images/placeholder-music.jpg' %}" class="card-img-top" alt="Musik-Track">
+                <div class="card-body">
+                    <h5 class="card-title">Track Name</h5>
+                    <p class="card-text">Künstler: Artist Name</p>
+                    <a href="#" class="btn btn-primary">Jetzt anhören</a>
+                </div>
+            </div>
+        </div>
+        <!-- Wiederhole für weitere Musiktracks -->
+    </div>
+{% endblock %}

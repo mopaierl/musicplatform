@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container d-flex justify-content-center align-items-center" style="min-height: 100vh;">
+    <div class="card shadow-lg p-4" style="width: 100%; max-width: 500px; border-radius: 15px;">
+        <h2 class="text-center mb-4" style="color: #290976;">Einloggen</h2>
+        <form method="post">
+            {% csrf_token %}
+            
+            <!-- Benutzername -->
+            <div class="form-group mb-3">
+                <label for="id_username" class="form-label" style="font-weight: bold;">Benutzername</label>
+                <input type="text" name="username" id="id_username" class="form-control rounded-pill p-3" value="{{ form.username.value }}">
+                {% if form.username.errors %}
+                    <div class="invalid-feedback d-block mt-2">
+                        {% for error in form.username.errors %}
+                            <p>{{ error }}</p>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+
+            <!-- Passwort -->
+            <div class="form-group mb-4">
+                <label for="id_password" class="form-label" style="font-weight: bold;">Passwort</label>
+                <input type="password" name="password" id="id_password" class="form-control rounded-pill p-3" value="{{ form.password.value }}">
+                {% if form.password.errors %}
+                    <div class="invalid-feedback d-block mt-2">
+                        {% for error in form.password.errors %}
+                            <p>{{ error }}</p>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+
+            <!-- Login Button -->
+            <button type="submit" class="btn btn-primary w-100 rounded-pill py-2" style="background: #290976; border: none;">Einloggen</button>
+        </form>
+
+        <!-- Passwort vergessen Link -->
+        <div class="text-center mt-3">
+            <a href="{% url 'password_reset' %}" style="color: #290976;">Passwort vergessen?</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

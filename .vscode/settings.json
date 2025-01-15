@@ -1,0 +1,11 @@
+{
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "driver": "SQLite",
+            "name": "db",
+            "database": "${workspaceFolder:musicplatform}/db.sqlite3"
+        }
+    ],
+    "sqltools.useNodeRuntime": true
+}

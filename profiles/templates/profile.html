@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+
+{% block title %}Profile - DirectMusicPlatform{% endblock %}
+
+{% block content %}
+    <div class="main-content text-center">
+        <h2>Dein Profil</h2>
+        <p>Willkommen auf deinem Profil! Hier kannst du deine Musiktracks und mehr verwalten.</p>
+        
+        <!-- Platz für Profilbild oder Avatar -->
+        <div class="profile-avatar mt-4">
+            <img src="path_to_default_avatar.jpg" alt="Avatar" class="img-fluid rounded-circle" width="150" height="150">
+            <div class="mt-2">
+                <button class="btn btn-outline-secondary">Profilbild bearbeiten</button>
+            </div>
+        </div>
+
+        <!-- Profildaten Bearbeitung -->
+        <div class="profile-info mt-5">
+            <h4>Deine Daten</h4>
+            <p><strong>Name:</strong> Max Mustermann</p>
+            <p><strong>Email:</strong> max@mustermann.de</p>
+            <a href="/profile/editData" class="btn btn-info mt-2">Bearbeiten</a>
+        </div>
+
+        <!-- Musikverwaltung -->
+        <div class="music-management mt-5">
+            <h4>Deine Musik</h4>
+            <p>Verwalte deine Musiktracks, lade neue hoch und bearbeite bestehende.</p>
+            <button class="btn btn-success mt-2">Musik hochladen</button>
+        </div>
+
+        <!-- Analytics Button für Statistiken -->
+        <div class="analytics-button mt-5">
+            <h4>Deine Statistiken</h4>
+            <p>Sieh dir deine Verkaufszahlen und andere wichtige Daten an.</p>
+            <button class="btn btn-info mt-2">Analytics anzeigen</button>
+        </div>
+
+        <!-- Log Out Button -->
+        <div class="logout-button">
+            <a href="/profile/login" class="btn btn-danger">Log Out</a>
+        </div>
+    </div>
+
+    <!-- Zusätzliche Styles für Positionierung des Logout-Buttons -->
+    <style>
+        .main-content {
+            position: relative;
+            min-height: 80vh;
+        }
+
+        .logout-button {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+        }
+
+        .profile-avatar img {
+            border: 5px solid #fff;
+        }
+
+        .profile-info, .music-management, .analytics-button {
+            background-color: rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .profile-info p, .music-management p, .analytics-button p {
+            font-size: 1.1em;
+        }
+
+        .btn {
+            width: auto;
+            padding: 10px 20px;
+            margin: 10px 0;
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+        }
+    </style>
+{% endblock %}

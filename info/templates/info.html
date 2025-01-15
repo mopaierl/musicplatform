@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block title %}Profile - DirectMusicPlatform{% endblock %}
+
+{% block content %}
+    <div class="main-content text-center">
+        <h2>Info</h2>
+        <p>How it works!</p>     
+    </div>
+
+    <!-- Zusätzliche Styles für Positionierung des Logout-Buttons -->
+    <style>
+        .main-content {
+            position: relative;
+            min-height: 100vh;
+        }
+
+        .logout-button {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+        }
+
+        .profile-avatar img {
+            border: 5px solid #fff;
+        }
+
+        .profile-info, .music-management, .analytics-button {
+            background-color: rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .profile-info p, .music-management p, .analytics-button p {
+            font-size: 1.1em;
+        }
+
+        .btn {
+            width: auto;
+            padding: 10px 20px;
+            margin: 10px 0;
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+        }
+    </style>
+{% endblock %}

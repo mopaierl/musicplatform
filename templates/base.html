@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}DirectMusicPlatform{% endblock %}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body, html {
+            font-family: 'Menlo', monospace;
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+
+        /* Vollbild für den gesamten Body */
+        .main-content {
+            min-height: 100vh; 
+            padding-top: 60px; /* Platz für die Navbar */
+            overflow-y: auto; /* Ermöglicht Scrollen */
+            background: linear-gradient(to bottom, #290976, #000000); /* Lila-Blau-Verlauf */
+            color: white; /* Weißer Text */
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: linear-gradient(to bottom, #290976, #000000); /* Lila-Blau-Verlauf */
+            display: flex;
+            align-items: center; /* Vertikale Ausrichtung der Navbar */
+        }
+
+        .navbar a {
+            color: white;
+            font-weight: bold;
+        }
+
+        .navbar a:hover {
+            color: #ff6347; /* Beispielhafte Hoverfarbe */
+        }
+
+        .navbar-brand {
+            font-size: 1.5em;
+            font-weight: 600;
+            padding-left: 0; /* Entferne Padding für die linke Seite */
+        }
+
+        .navbar img {
+            width: 40px; /* Bildgröße anpassen */
+            height: 40px; /* Bildgröße anpassen */
+            border-radius: 50%; /* Macht das Bild rund */
+            object-fit: cover; /* Verhindert Verzerrung */
+        }
+
+        /* Text- und Button-Styling */
+        .main-content h1, .main-content h2 {
+            text-align: center;
+            font-size: 2.5em;
+            font-weight: 700;
+            margin-top: 20px;
+        }
+
+        .main-content p {
+            text-align: center;
+            font-size: 1.2em;
+            line-height: 1.6;
+            margin-top: 20px;
+        }
+
+        .btn {
+            width: auto;
+            padding: 10px 20px;
+            font-size: 1.1em;
+            border-radius: 5px;
+            margin-top: 30px;
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="/">DirectMusicPlatform</a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item me-auto"> <!-- Links am linken Rand -->
+                        <a class="nav-link" href="/">| Home</a>
+                    </li>
+                    <li class="nav-item me-auto">
+                        <a class="nav-link" href="/upload">| Upload Tracks</a>
+                    </li>
+                    <li class="nav-item me-auto">
+                        <a class="nav-link" href="/discover">| Discover</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/info" class="d-flex align-items-center">
+                            <a class="nav-link" href="/info">| Info</a>
+                        </a>
+                    </li>
+                    <li class="nav-item me-auto">
+                        <a class="nav-link" href="/profile">| Profile |</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="/profile" class="d-flex align-items-center">
+                            <img src="templates/bild.PNG" alt="Profilbild">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main content -->
+    <div class="main-content">
+        {% block content %}
+        {% endblock %}
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
